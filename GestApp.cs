@@ -24,7 +24,8 @@ using Models;
     {
         Console.WriteLine("\n--- Menú Principal ---");
         Console.WriteLine("1. Añadir un pedido");
-        Console.WriteLine("2. Salir");
+        Console.WriteLine("2. Añadir factura a un pedido");
+        Console.WriteLine("3. Salir");
         Console.WriteLine("Selecciona una opción:");
 
         
@@ -41,6 +42,9 @@ using Models;
                 AgregarPedido();
                 break;
             case 2:
+                AgregarFacturaPedido();
+                break;
+            case 3:
                 Console.WriteLine("Saliendo");
                 break;
             default:
@@ -48,7 +52,7 @@ using Models;
                 break;
         }
 
-    } while (opcion != 2); 
+    } while (opcion != 3); 
 }
 
 private void AgregarPedido()
@@ -84,8 +88,33 @@ private void AgregarPedido()
 private void AgregarFacturaPedido(){
 
 Console.WriteLine("\n --- Agregar factura a pedido");
+Console.Write("\n--- Introduce Id del pedido ---: ");
+int idPedidoBuscado = int.Parse(Console.ReadLine());
 
+Pedido pedidoEncontrado = null; 
+    foreach (var pedido in pedidos)
+    {
+        if (pedido.IdPedido == idPedidoBuscado)
+        {
+            pedidoEncontrado = pedido;
+            break;
+        }
+    }
 
+if (pedidoEncontrado!=null)
+    {
+      int idFactura =contadorFacturas++;
+      Factura nuevaFactura = new Factura(idFactura, pedidoEncontrado.IdPedido, pedidoEncontrado.Productos );
+        facturas.Add(nuevaFactura); 
+
+       
+        Console.WriteLine("\n--- Factura generada ---");
+        nuevaFactura.MostrarDetalles();
+
+    } else
+    {
+         Console.WriteLine("No existe ese pedido");
+    }
 }
 
 
