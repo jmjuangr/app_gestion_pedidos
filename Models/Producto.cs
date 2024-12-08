@@ -21,4 +21,6 @@ public Producto (int idProducto, string nombreProducto, decimal precioProducto){
         {
             Console.WriteLine($"ID: {IdProducto}, Nombre: {NombreProducto}, Precio:{PrecioProducto}");
         }
+
+    
 }

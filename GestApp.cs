@@ -23,7 +23,7 @@ using Models;
     do
     {
         Console.WriteLine("\n--- Menú Principal ---");
-        Console.WriteLine("1. Añadir un Pedido");
+        Console.WriteLine("1. Añadir un pedido");
         Console.WriteLine("2. Salir");
         Console.WriteLine("Selecciona una opción:");
 
@@ -38,7 +38,7 @@ using Models;
         switch (opcion)
         {
             case 1:
-                //AgregarPedido();
+                AgregarPedido();
                 break;
             case 2:
                 Console.WriteLine("Saliendo");
@@ -51,6 +51,33 @@ using Models;
     } while (opcion != 2); 
 }
 
+private void AgregarPedido(){
+
+   List<Producto> productos = new List<Producto>();
+
+    Console.WriteLine("\n--- Agregar un nuevo pedido ---");
+    
+    Console.WriteLine("\n--- Introduce Id del pedido ---");
+    int idPedido=int.Parse(Console.ReadLine());
+      Console.WriteLine("\n--- Introduce Id del producto ---");
+    int idProducto=int.Parse(Console.ReadLine());
+       Console.WriteLine("\n--- Introduce el nombre del producto ---");
+    string nombreProducto=Console.ReadLine();
+      Console.WriteLine("\n--- Introduce el precio del producto ---");
+    decimal precioProducto=decimal.Parse(Console.ReadLine());
+
+    Producto nuevoProducto = new Producto (idProducto, nombreProducto,precioProducto);
+    productos.Add(nuevoProducto);
+
+    Console.WriteLine("\n--- Detalles de los productos añadidos ---");
+foreach (var producto in productos)
+{
+    producto.MostrarDetalles();
+}
+
+
+  
+}
 
 
     }

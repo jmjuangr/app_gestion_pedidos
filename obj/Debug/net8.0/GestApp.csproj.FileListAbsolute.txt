@@ -1,0 +1,15 @@
+C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\bin\Debug\net8.0\GestApp.exe
+C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\bin\Debug\net8.0\GestApp.deps.json
+C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\bin\Debug\net8.0\GestApp.runtimeconfig.json
+C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\bin\Debug\net8.0\GestApp.dll
+C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\bin\Debug\net8.0\GestApp.pdb
+C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\obj\Debug\net8.0\GestApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\obj\Debug\net8.0\GestApp.AssemblyInfoInputs.cache
+C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\obj\Debug\net8.0\GestApp.AssemblyInfo.cs
+C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\obj\Debug\net8.0\GestApp.csproj.CoreCompileInputs.cache
+C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\obj\Debug\net8.0\GestApp.sourcelink.json
+C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\obj\Debug\net8.0\GestApp.dll
+C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\obj\Debug\net8.0\refint\GestApp.dll
+C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\obj\Debug\net8.0\GestApp.pdb
+C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\obj\Debug\net8.0\GestApp.genruntimeconfig.cache
+C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\obj\Debug\net8.0\ref\GestApp.dll
