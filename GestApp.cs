@@ -51,33 +51,42 @@ using Models;
     } while (opcion != 2); 
 }
 
-private void AgregarPedido(){
-
-   List<Producto> productos = new List<Producto>();
-
-    Console.WriteLine("\n--- Agregar un nuevo pedido ---");
-    
-    Console.WriteLine("\n--- Introduce Id del pedido ---");
-    int idPedido=int.Parse(Console.ReadLine());
-      Console.WriteLine("\n--- Introduce Id del producto ---");
-    int idProducto=int.Parse(Console.ReadLine());
-       Console.WriteLine("\n--- Introduce el nombre del producto ---");
-    string nombreProducto=Console.ReadLine();
-      Console.WriteLine("\n--- Introduce el precio del producto ---");
-    decimal precioProducto=decimal.Parse(Console.ReadLine());
-
-    Producto nuevoProducto = new Producto (idProducto, nombreProducto,precioProducto);
-    productos.Add(nuevoProducto);
-
-    Console.WriteLine("\n--- Detalles de los productos añadidos ---");
-foreach (var producto in productos)
+private void AgregarPedido()
 {
-    producto.MostrarDetalles();
-}
-
+    Console.WriteLine("\n--- Agregar un nuevo pedido ---");
 
   
+    Console.Write("\n--- Introduce Id del pedido ---: ");
+    int idPedido = int.Parse(Console.ReadLine());
+    Pedido pedido = new Pedido(idPedido);
+
+ 
+    Console.WriteLine("\n--- Introduce Id del producto ---");
+    int idProducto = int.Parse(Console.ReadLine());
+
+    Console.WriteLine("\n--- Introduce el nombre del producto ---");
+    string nombreProducto = Console.ReadLine();
+
+    Console.WriteLine("\n--- Introduce el precio del producto ---");
+    decimal precioProducto = decimal.Parse(Console.ReadLine());
+
+   
+    Producto nuevoProducto = new Producto(idProducto, nombreProducto, precioProducto);
+    pedido.AgregarProducto(nuevoProducto);
+
+    
+    pedidos.Add(pedido);
+
+    Console.WriteLine("\n--- Detalles del pedido ---");
+    pedido.MostrarDetalles();
+}
+
+private void AgregarFacturaPedido(){
+
+Console.WriteLine("\n --- Agregar factura a pedido");
+
+
 }
 
 
-    }
+}
