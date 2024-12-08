@@ -23,8 +23,9 @@ using Models;
     do
     {
         Console.WriteLine("\n--- Menú Principal ---");
-        Console.WriteLine("1. Añadir un Pedido");
-        Console.WriteLine("2. Salir");
+        Console.WriteLine("1. Añadir un pedido");
+        Console.WriteLine("2. Añadir factura a un pedido");
+        Console.WriteLine("3. Salir");
         Console.WriteLine("Selecciona una opción:");
 
         
@@ -38,9 +39,12 @@ using Models;
         switch (opcion)
         {
             case 1:
-                //AgregarPedido();
+                AgregarPedido();
                 break;
             case 2:
+                AgregarFacturaPedido();
+                break;
+            case 3:
                 Console.WriteLine("Saliendo");
                 break;
             default:
@@ -48,9 +52,70 @@ using Models;
                 break;
         }
 
-    } while (opcion != 2); 
+    } while (opcion != 3); 
+}
+
+private void AgregarPedido()
+{
+    Console.WriteLine("\n--- Agregar un nuevo pedido ---");
+
+  
+    Console.Write("\n--- Introduce Id del pedido ---: ");
+    int idPedido = int.Parse(Console.ReadLine());
+    Pedido pedido = new Pedido(idPedido);
+
+ 
+    Console.WriteLine("\n--- Introduce Id del producto ---");
+    int idProducto = int.Parse(Console.ReadLine());
+
+    Console.WriteLine("\n--- Introduce el nombre del producto ---");
+    string nombreProducto = Console.ReadLine();
+
+    Console.WriteLine("\n--- Introduce el precio del producto ---");
+    decimal precioProducto = decimal.Parse(Console.ReadLine());
+
+   
+    Producto nuevoProducto = new Producto(idProducto, nombreProducto, precioProducto);
+    pedido.AgregarProducto(nuevoProducto);
+
+    
+    pedidos.Add(pedido);
+
+    Console.WriteLine("\n--- Detalles del pedido ---");
+    pedido.MostrarDetalles();
+}
+
+private void AgregarFacturaPedido(){
+
+Console.WriteLine("\n --- Agregar factura a pedido");
+Console.Write("\n--- Introduce Id del pedido ---: ");
+int idPedidoBuscado = int.Parse(Console.ReadLine());
+
+Pedido pedidoEncontrado = null; 
+    foreach (var pedido in pedidos)
+    {
+        if (pedido.IdPedido == idPedidoBuscado)
+        {
+            pedidoEncontrado = pedido;
+            break;
+        }
+    }
+
+if (pedidoEncontrado!=null)
+    {
+      int idFactura =contadorFacturas++;
+      Factura nuevaFactura = new Factura(idFactura, pedidoEncontrado.IdPedido, pedidoEncontrado.Productos );
+        facturas.Add(nuevaFactura); 
+
+       
+        Console.WriteLine("\n--- Factura generada ---");
+        nuevaFactura.MostrarDetalles();
+
+    } else
+    {
+         Console.WriteLine("No existe ese pedido");
+    }
 }
 
 
-
-    }
+}

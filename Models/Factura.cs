@@ -21,7 +21,7 @@ namespace Models
         }
 
         
-        private decimal CalcularImporteTotal()
+        public decimal CalcularImporteTotal()
         {
             decimal total = 0;
             foreach (var producto in Productos)
