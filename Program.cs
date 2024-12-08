@@ -1,2 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Models;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+      
+        GestApp app = new GestApp();
+
+        app.MenuGestApp();
+    }
+}
