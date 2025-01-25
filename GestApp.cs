@@ -9,6 +9,7 @@ using Models;
         private List<Factura> facturas; 
         private int contadorPedidos = 1; 
         private int contadorFacturas = 1; 
+        private const string rutaArchivo = @"C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\pedidos.json";
 
         public GestApp()
         {
@@ -25,17 +26,16 @@ using Models;
         Console.WriteLine("\n--- Menú Principal ---");
         Console.WriteLine("1. Añadir un pedido");
         Console.WriteLine("2. Añadir factura a un pedido");
-        Console.WriteLine("3. Salir");
+        Console.WriteLine("3. Buscar un pedido");
+        Console.WriteLine("4. Salir");
         Console.WriteLine("Selecciona una opción:");
 
-        
-        if (!int.TryParse(Console.ReadLine(), out opcion) || opcion < 1 || opcion > 2)
+        if (!int.TryParse(Console.ReadLine(), out opcion) || opcion < 1 || opcion > 4)
         {
-            Console.WriteLine("Error: Por favor selecciona una opción válida (1-2).");
+            Console.WriteLine("Error: Por favor selecciona una opción válida (1-4).");
             continue;
         }
 
-        
         switch (opcion)
         {
             case 1:
@@ -44,16 +44,21 @@ using Models;
             case 2:
                 AgregarFacturaPedido();
                 break;
+
             case 3:
+                BuscarPedido();
+                break;
+            
+            case 4:
                 Console.WriteLine("Saliendo");
                 break;
             default:
                 Console.WriteLine("Opción incorrecta");
                 break;
         }
-
-    } while (opcion != 3); 
+    } while (opcion != 4);
 }
+
 
 private void AgregarPedido()
 {
@@ -83,6 +88,8 @@ private void AgregarPedido()
 
     Console.WriteLine("\n--- Detalles del pedido ---");
     pedido.MostrarDetalles();
+
+ pedido.GuardarPedido(rutaArchivo);
 }
 
 private void AgregarFacturaPedido(){
@@ -117,5 +124,30 @@ if (pedidoEncontrado!=null)
     }
 }
 
+private void BuscarPedido () {
+Console.Write("\n--- Buscar pedido ---: ");
+Console.Write("\n--- Introduce Id del pedido ---: ");
+int idPedidoBuscado = int.Parse(Console.ReadLine());
+
+Pedido pedidoEncontrado = null; 
+    foreach (var pedido in pedidos)
+    {
+        if (pedido.IdPedido == idPedidoBuscado)
+        {
+            pedidoEncontrado = pedido;
+            break;
+        }
+    }
+
+if (pedidoEncontrado!=null)
+    {
+    
+        pedidoEncontrado.MostrarDetalles();
+    } else
+    {
+         Console.WriteLine("No existe ese pedido");
+    }
+
+}
 
 }
