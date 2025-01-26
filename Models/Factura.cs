@@ -43,5 +43,24 @@ namespace Models
             }
             Console.WriteLine($"Importe Total: {ImporteTotal:C}"); 
         }
+
+
+        public void GuardarFactura(string filePath)
+        {
+            using (StreamWriter sw = new StreamWriter(filePath))
+                foreach (var producto in Productos)
+                {
+                    sw.WriteLine($"{IdFactura}|{IdPedido}|{producto.IdProducto}|{producto.NombreProducto}|{producto.PrecioProducto}");
+                }
+                  Console.WriteLine($"Factura guardada correctamente en {filePath}.");
+            }
+
+          
+        }
     }
-}
+
+
+
+
+
+ 
