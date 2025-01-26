@@ -7,6 +7,6 @@ class Program
       
         GestApp app = new GestApp();
 
-        app.MenuGestApp();
+       app.MenuPrincipal();
     }
 }

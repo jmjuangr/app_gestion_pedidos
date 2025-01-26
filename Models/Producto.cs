@@ -7,6 +7,7 @@ public int IdProducto {get;set;}
 public string NombreProducto {get;set;}
 public decimal PrecioProducto {get;set;}
 
+
 public Producto (int idProducto, string nombreProducto, decimal precioProducto){
 
     IdProducto=idProducto;

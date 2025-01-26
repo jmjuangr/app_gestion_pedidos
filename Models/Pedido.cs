@@ -2,6 +2,8 @@ namespace Models;
 class Pedido
 
 {
+   
+
         public int IdPedido { get; private set; } 
         public DateTime Fecha { get; private set; } 
         public List<Producto> Productos { get; private set; } 
@@ -37,6 +39,21 @@ class Pedido
                 }
             }
         }
+
+
+
+    public void GuardarPedido(string filePath)
+    {
+        using (StreamWriter sw = new StreamWriter(filePath))
+        {
+            foreach (var producto in Productos)
+            {
+                sw.WriteLine($"{IdPedido}|{producto.IdProducto}|{producto.NombreProducto}|{producto.PrecioProducto}");
+            }
+        }
+
+        Console.WriteLine($"Pedido guardado correctamente en {filePath}.");
     }
 
-
+    
+    }
