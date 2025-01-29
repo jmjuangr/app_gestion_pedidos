@@ -10,9 +10,9 @@ using System.IO;
     private List<Factura> facturas;
     private int contadorPedidos = 1;
     private int contadorFacturas = 1;
-    private const string rutaArchivoPedidos = @"C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\pedidos.txt";
-    private const string rutaArchivoProductos = @"C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\productos.txt";
-    private const string rutaArchivoFacturas = @"C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\facturas.txt";
+    private const string rutaArchivoPedidos = @"C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\data\pedidos.txt"; 
+    private const string rutaArchivoProductos = @"C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\data\productos.txt";
+    private const string rutaArchivoFacturas = @"C:\Users\Jose M\Documents\DAW\SAN VALERO\Desarrollo web en entorno servidor\GestApp\data\facturas.txt";
 
     public GestApp()
     {
