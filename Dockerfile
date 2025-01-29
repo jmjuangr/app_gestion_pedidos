@@ -1,29 +1,30 @@
-# 1. Usamos una imagen oficial de .NET 8 como base
+# 1. Imagen oficial de .NET
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
-# 2. Configuramos el directorio de trabajo dentro del contenedor
+# 2. Carpeta que se crea dentro del contenedor
 WORKDIR /app
 
-# 3. Copiamos todos los archivos del proyecto al contenedor
+# 3. Copia de los archivos
 COPY . .
 
-# 4. Restauramos paquetes y compilamos la aplicación
+# 4. Restaurar dependencias
 RUN dotnet restore
 RUN dotnet publish -c Release -o out
 
-# 5. Creamos una nueva imagen más liviana con solo lo necesario
+# 5. Ahora creamos una imagen 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 
-# 6. Configuramos el directorio de trabajo en el contenedor
+# 6. Carpetade la aplicación
 WORKDIR /app
 
-# 7. Copiamos los archivos compilados desde la imagen anterior
+# 7. Copiamos los archivos ya compilados de la primera imagen a nueva imagen
 COPY --from=build /app/out .
 
-# 8. Exponemos el puerto 8870
+# 8. puerto 8870 (cifras de mi correo San Valero)
 EXPOSE 8870
 
+# 9. Se crea un volumen para guardar los datos de facturas, pedidos, productos
 VOLUME ["/app/data"]
 
-# 9. Definimos el comando para ejecutar la aplicación dentro del contenedor
+# 10. Comandos para ejecutar la aplicación en el contendor
 CMD ["dotnet", "GestApp.dll"]
